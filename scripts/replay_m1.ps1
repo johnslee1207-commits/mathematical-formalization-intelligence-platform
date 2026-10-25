@@ -24,6 +24,8 @@ $sourceHash = (Get-FileHash $sourcePath -Algorithm SHA256).Hash
 $negativeHash = (Get-FileHash $negativePath -Algorithm SHA256).Hash
 
 if ($report.status -ne 'pass') { throw 'M1 replay failed: acceptance report is not pass' }
+if ($report.data_layer_registry_sha256 -ne $registryHash) { throw 'M1 replay failed: data-layer registry hash mismatch' }
+if ($report.profile_scope -ne (Get-Content -Raw $EnvironmentProfilePath | ConvertFrom-Json).profile_scope) { throw 'M1 replay failed: profile scope mismatch' }
 if ($report.manifest_sha256 -ne $manifestHash) { throw 'M1 replay failed: manifest hash mismatch' }
 if ($report.benchmark_source_sha256 -ne $sourceHash) { throw 'M1 replay failed: benchmark source hash mismatch' }
 if ($report.negative_source_sha256 -ne $negativeHash) { throw 'M1 replay failed: negative source hash mismatch' }
@@ -35,6 +37,8 @@ if ($report.negative_source_sha256 -ne $negativeHash) { throw 'M1 replay failed:
   registry_sha256 = $registryHash
   benchmark_source_sha256 = $sourceHash
   negative_source_sha256 = $negativeHash
+  profile_scope = $report.profile_scope
+  data_layer_registry_sha256 = $registryHash
   toolchain = (Get-Content -Raw (Join-Path $projectRoot 'lean-toolchain')).Trim()
   acceptance_status = $report.status
   negative_contract_status = 'pass'
