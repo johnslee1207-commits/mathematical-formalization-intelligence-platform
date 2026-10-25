@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-  [string]$EnvironmentProfilePath = (Join-Path (Split-Path -Parent $PSScriptRoot) 'config\local\m0_environment.json')
+  [string]$EnvironmentProfilePath = (Join-Path (Split-Path -Parent $PSScriptRoot) 'config/local/m0_environment.json')
 )
 
 $ErrorActionPreference = 'Stop'
@@ -10,9 +10,9 @@ if ($profile.elan_home) { $env:ELAN_HOME = $profile.elan_home }
 if ($profile.elan_bin) { $env:Path = $profile.elan_bin + [IO.Path]::PathSeparator + $env:Path }
 Set-Location -LiteralPath $projectRoot
 
-$manifestPath = Join-Path $projectRoot 'benchmarks\m1_benchmark_05.json'
-$sourcePath = Join-Path $projectRoot 'M1\Benchmark.lean'
-$negativePath = Join-Path $projectRoot 'M1\Negative.lean'
+$manifestPath = Join-Path $projectRoot 'benchmarks/m1_benchmark_05.json'
+$sourcePath = Join-Path $projectRoot 'M1/Benchmark.lean'
+$negativePath = Join-Path $projectRoot 'M1/Negative.lean'
 $manifest = Get-Content -Raw -LiteralPath $manifestPath | ConvertFrom-Json
 $sourceText = Get-Content -Raw -LiteralPath $sourcePath
 $negativeText = Get-Content -Raw -LiteralPath $negativePath

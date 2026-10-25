@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v7
@@ -18,3 +18,6 @@ jobs:
       - name: Run M0 deterministic acceptance
         shell: pwsh
         run: ./scripts/replay_m0.ps1 -EnvironmentProfilePath ./config/ci/m0_environment.json
+      - name: Run M1 deterministic acceptance
+        shell: pwsh
+        run: ./scripts/replay_m1.ps1 -EnvironmentProfilePath ./config/ci/m0_environment.json
