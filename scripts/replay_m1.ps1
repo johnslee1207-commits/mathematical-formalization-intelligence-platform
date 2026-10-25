@@ -12,12 +12,13 @@ Set-Location -LiteralPath $projectRoot
 & "$PSScriptRoot\verify_m1.ps1" -EnvironmentProfilePath $EnvironmentProfilePath
 
 $manifestPath = Join-Path $projectRoot 'benchmarks/m1_benchmark_10.json'
-$reportPath = Join-Path $projectRoot 'reports/m1_acceptance_report.json'
+$acceptanceReportPath = Join-Path $projectRoot 'reports/m1_acceptance_report.json'
+$replayReportPath = Join-Path $projectRoot 'reports/m1_replay_report.json'
 $registryPath = Join-Path $projectRoot 'manifests/data_layers/registry.json'
 $sourcePath = Join-Path $projectRoot 'M1/Benchmark.lean'
 $negativePath = Join-Path $projectRoot 'M1/Negative.lean'
 $manifest = Get-Content -Raw $manifestPath | ConvertFrom-Json
-$report = Get-Content -Raw $reportPath | ConvertFrom-Json
+$report = Get-Content -Raw $acceptanceReportPath | ConvertFrom-Json
 $registryHash = (Get-FileHash $registryPath -Algorithm SHA256).Hash
 $manifestHash = (Get-FileHash $manifestPath -Algorithm SHA256).Hash
 $sourceHash = (Get-FileHash $sourcePath -Algorithm SHA256).Hash
@@ -43,7 +44,7 @@ if ($report.negative_source_sha256 -ne $negativeHash) { throw 'M1 replay failed:
   acceptance_status = $report.status
   negative_contract_status = 'pass'
   replay_status = 'pass'
-} | ConvertTo-Json -Depth 5 | Set-Content $reportPath -Encoding utf8
+} | ConvertTo-Json -Depth 5 | Set-Content $replayReportPath -Encoding utf8
 
 Write-Host 'M1 deterministic replay: PASS'
 
