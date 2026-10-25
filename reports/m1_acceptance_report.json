@@ -1,0 +1,13 @@
+{
+  "schema": "m1-acceptance-report.v1",
+  "benchmark_id": "m1-lean-formalization-05",
+  "case_count": 5,
+  "negative_check_count": 2,
+  "manifest_sha256": "E5440E693DD4B1CD07477FC48B08312FD012FF0957BE74A1E3C4401C73E29988",
+  "benchmark_source_sha256": "1752EA4772844992966188C1AC2AB6FB15AC29A70E2DE6AA17CD6D02D111FC87",
+  "negative_source_sha256": "E73B7293C5F792DA1E3F0A3F40F01E43450DC4A880FD30BEB76DE8A28D4A78A5",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "lean": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lake": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "status": "pass"
+}

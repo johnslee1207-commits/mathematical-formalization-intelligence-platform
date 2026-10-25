@@ -4,10 +4,12 @@ M1 在 M0 的 Lean 4/Mathlib 验收基线之上，扩展形式化题目和负例
 
 ## 当前阶段
 
-- 状态：started
+- 状态：in_progress
 - 契约：`M1/phase_contract.json`
 - 独立契约检查：`scripts/check_m1_contract.ps1`
 - 后续验收入口：`scripts/replay_m1.ps1`
+- 当前实现：5 个正例、2 个负例已进入首个 proof slice。
+- M1 回放：`scripts/replay_m1.ps1`
 
 ## 阶段门
 

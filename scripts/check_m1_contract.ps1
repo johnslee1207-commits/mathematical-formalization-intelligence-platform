@@ -8,7 +8,7 @@ Set-Location -LiteralPath $projectRoot
 $contract = Get-Content -Raw 'M1\phase_contract.json' | ConvertFrom-Json
 if ($contract.schema -ne 'm1-task-contract.v1') { throw 'M1 contract schema mismatch' }
 if ($contract.phase -ne 'M1') { throw 'M1 phase mismatch' }
-if ($contract.status -ne 'started') { throw 'M1 contract must be started before implementation' }
+if ($contract.status -notin @('started', 'in_progress')) { throw 'M1 contract must be started before implementation' }
 if ($contract.deliverables.Count -lt 5) { throw 'M1 contract must contain at least five deliverables' }
 if ($contract.negative_corpus_requirements.minimum_distinct_checks -lt 2) { throw 'M1 negative corpus minimum is too small' }
 if (-not $contract.independent_verifier.must_run_without_lake_build) { throw 'M1 verifier must be independent of lake build' }

@@ -1,0 +1,12 @@
+{
+  "benchmark_id": "m1-lean-formalization-05",
+  "version": "0.1.0",
+  "oracle": "lake build",
+  "cases": [
+    {"id":"M1-01","class":"logic","lean_declaration":"m1_01_imp_trans","target":"(P → Q) → (Q → R) → P → R","negative_check":"m1_neg_01_not_one_lt_zero"},
+    {"id":"M1-02","class":"arithmetic","lean_declaration":"m1_02_even_mul_two","target":"Even (2*n)","negative_check":"m1_neg_02_not_all_zero_lt"},
+    {"id":"M1-03","class":"arithmetic","lean_declaration":"m1_03_sub_self","target":"n - n = 0 for Nat","negative_check":"m1_neg_01_not_one_lt_zero"},
+    {"id":"M1-04","class":"sets","lean_declaration":"m1_04_inter_subset_left","target":"A ∩ B ⊆ A","negative_check":"m1_neg_02_not_all_zero_lt"},
+    {"id":"M1-05","class":"logic","lean_declaration":"m1_05_exists_eq_self","target":"Nonempty α → ∃ x : α, x = x","negative_check":"m1_neg_01_not_one_lt_zero"}
+  ]
+}
