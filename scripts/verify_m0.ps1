@@ -11,11 +11,20 @@ if ($profile.elan_bin) { $env:Path = $profile.elan_bin + [IO.Path]::PathSeparato
 
 Set-Location -LiteralPath $projectRoot
 $manifestPath = Join-Path $projectRoot 'benchmarks\\m0_benchmark_10.json'
+$registryPath = Join-Path $projectRoot 'manifests\\data_layers\\registry.json'
 $benchmarkSourcePath = Join-Path $projectRoot 'M0\\Benchmark.lean'
 $negativeSourcePath = Join-Path $projectRoot 'M0\\Negative.lean'
 $sourceText = Get-Content -Raw -LiteralPath $benchmarkSourcePath
 $negativeText = Get-Content -Raw -LiteralPath $negativeSourcePath
 $manifest = Get-Content -Raw -LiteralPath $manifestPath | ConvertFrom-Json
+$registry = Get-Content -Raw -LiteralPath $registryPath | ConvertFrom-Json
+foreach ($requiredPath in @('scripts/', 'benchmarks/', 'M0/', 'reports/', 'config/local/', 'config/ci/')) {
+  $registered = $false
+  foreach ($layer in $registry.layers.PSObject.Properties) {
+    if ($layer.Value -contains $requiredPath) { $registered = $true; break }
+  }
+  if (-not $registered) { throw "Data-layer registry is missing path classification: $requiredPath" }
+}
 if ($manifest.cases.Count -ne 10) { throw "M0 benchmark must contain exactly 10 cases" }
 $caseIds = @($manifest.cases.id)
 $declarations = @($manifest.cases.lean_declaration)
@@ -49,6 +58,8 @@ $report = [pscustomobject]@{
   case_count = $manifest.cases.Count
   class_counts = $classCounts
   negative_check_count = @($manifest.cases.negative_check | Sort-Object -Unique).Count
+  data_layer_registry_sha256 = (Get-FileHash $registryPath -Algorithm SHA256).Hash
+  data_layer_status = 'pass'
   manifest_sha256 = (Get-FileHash $manifestPath -Algorithm SHA256).Hash
   benchmark_source_sha256 = (Get-FileHash $benchmarkSourcePath -Algorithm SHA256).Hash
   negative_source_sha256 = (Get-FileHash $negativeSourcePath -Algorithm SHA256).Hash

@@ -25,6 +25,8 @@ if ($report.status -ne 'pass') { throw 'Replay failed: acceptance report is not 
 if ($report.case_count -ne 10) { throw 'Replay failed: report case count mismatch' }
 $expectedManifestHash = (Get-FileHash 'benchmarks\m0_benchmark_10.json' -Algorithm SHA256).Hash
 if ($report.manifest_sha256 -ne $expectedManifestHash) { throw 'Replay failed: acceptance manifest hash mismatch' }
+$expectedRegistryHash = (Get-FileHash 'manifests\data_layers\registry.json' -Algorithm SHA256).Hash
+if ($report.data_layer_registry_sha256 -ne $expectedRegistryHash) { throw 'Replay failed: acceptance data-layer registry hash mismatch' }
 $expectedBenchmarkHash = (Get-FileHash 'M0\Benchmark.lean' -Algorithm SHA256).Hash
 if ($report.benchmark_source_sha256 -ne $expectedBenchmarkHash) { throw 'Replay failed: benchmark source hash mismatch' }
 $expectedNegativeHash = (Get-FileHash 'M0\Negative.lean' -Algorithm SHA256).Hash
@@ -34,7 +36,7 @@ if ($report.negative_source_sha256 -ne $expectedNegativeHash) { throw 'Replay fa
   schema = 'm0-replay-report.v1'
   benchmark_id = $manifest.benchmark_id
   manifest_sha256 = $expectedManifestHash
-  registry_sha256 = (Get-FileHash 'manifests\data_layers\registry.json' -Algorithm SHA256).Hash
+  registry_sha256 = $expectedRegistryHash
   benchmark_source_sha256 = $expectedBenchmarkHash
   negative_source_sha256 = $expectedNegativeHash
   toolchain = (Get-Content -Raw 'lean-toolchain').Trim()
