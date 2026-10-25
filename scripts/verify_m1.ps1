@@ -10,7 +10,7 @@ if ($profile.elan_home) { $env:ELAN_HOME = $profile.elan_home }
 if ($profile.elan_bin) { $env:Path = $profile.elan_bin + [IO.Path]::PathSeparator + $env:Path }
 Set-Location -LiteralPath $projectRoot
 
-$manifestPath = Join-Path $projectRoot 'benchmarks/m1_benchmark_05.json'
+$manifestPath = Join-Path $projectRoot 'benchmarks/m1_benchmark_10.json'
 $registryPath = Join-Path $projectRoot 'manifests/data_layers/registry.json'
 $sourcePath = Join-Path $projectRoot 'M1/Benchmark.lean'
 $negativePath = Join-Path $projectRoot 'M1/Negative.lean'
@@ -19,9 +19,9 @@ $sourceText = Get-Content -Raw -LiteralPath $sourcePath
 $negativeText = Get-Content -Raw -LiteralPath $negativePath
 $registry = Get-Content -Raw -LiteralPath $registryPath | ConvertFrom-Json
 if ($profile.profile_scope -eq 'ci' -and ($profile.elan_home -or $profile.elan_bin)) { throw 'CI profile must not contain machine-specific Elan paths' }
-if ($profile.profile_scope -eq 'local' -and (-not $profile.elan_home -or -not $profile.elan_bin)) { throw 'Local profile must contain Elan paths' }
+if ($profile.profile_scope -in @('local', 'local_machine_specific') -and (-not $profile.elan_home -or -not $profile.elan_bin)) { throw 'Local profile must contain Elan paths' }
 if (-not ($registry.layers.domain_common -contains 'M1/')) { throw 'M1 data layer is not registered' }
-if ($manifest.cases.Count -ne 5) { throw 'M1 benchmark must contain exactly 5 cases' }
+if ($manifest.cases.Count -ne 10) { throw 'M1 benchmark must contain exactly 10 cases' }
 if (@($manifest.cases.id | Sort-Object -Unique).Count -ne $manifest.cases.Count) { throw 'M1 case IDs must be unique' }
 if (@($manifest.cases.lean_declaration | Sort-Object -Unique).Count -ne $manifest.cases.Count) { throw 'M1 declarations must be unique' }
 foreach ($case in $manifest.cases) {

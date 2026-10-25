@@ -14,10 +14,10 @@ try {
   Copy-Item (Join-Path (Join-Path $projectRoot 'M1') 'README.md') (Join-Path (Join-Path $tempRoot 'M1') 'README.md')
   Copy-Item (Join-Path (Join-Path $projectRoot 'M1') 'Benchmark.lean') (Join-Path (Join-Path $tempRoot 'M1') 'Benchmark.lean')
   Copy-Item (Join-Path (Join-Path $projectRoot 'M1') 'Negative.lean') (Join-Path (Join-Path $tempRoot 'M1') 'Negative.lean')
-  Copy-Item (Join-Path (Join-Path $projectRoot 'benchmarks') 'm1_benchmark_05.json') (Join-Path (Join-Path $tempRoot 'benchmarks') 'm1_benchmark_05.json')
+  Copy-Item (Join-Path (Join-Path $projectRoot 'benchmarks') 'm1_benchmark_10.json') (Join-Path (Join-Path $tempRoot 'benchmarks') 'm1_benchmark_10.json')
   Copy-Item (Join-Path (Join-Path (Join-Path $projectRoot 'manifests') 'data_layers') 'registry.json') (Join-Path (Join-Path (Join-Path $tempRoot 'manifests') 'data_layers') 'registry.json')
 
-  $manifestPath = Join-Path (Join-Path $tempRoot 'benchmarks') 'm1_benchmark_05.json'
+  $manifestPath = Join-Path (Join-Path $tempRoot 'benchmarks') 'm1_benchmark_10.json'
   $manifest = Get-Content -Raw -LiteralPath $manifestPath | ConvertFrom-Json
   $manifest.cases[1].id = $manifest.cases[0].id
   $manifest | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $manifestPath -Encoding utf8

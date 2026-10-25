@@ -1,0 +1,17 @@
+{
+  "benchmark_id": "m1-lean-formalization-10",
+  "version": "0.2.0",
+  "oracle": "lake build",
+  "cases": [
+    {"id":"M1-01","class":"logic","lean_declaration":"m1_01_imp_trans","target":"(P → Q) → (Q → R) → P → R","negative_check":"m1_neg_01_not_one_lt_zero"},
+    {"id":"M1-02","class":"arithmetic","lean_declaration":"m1_02_even_mul_two","target":"Even (2*n)","negative_check":"m1_neg_02_not_all_zero_lt"},
+    {"id":"M1-03","class":"arithmetic","lean_declaration":"m1_03_sub_self","target":"n - n = 0 for Nat","negative_check":"m1_neg_01_not_one_lt_zero"},
+    {"id":"M1-04","class":"sets","lean_declaration":"m1_04_inter_subset_left","target":"A ∩ B ⊆ A","negative_check":"m1_neg_02_not_all_zero_lt"},
+    {"id":"M1-05","class":"logic","lean_declaration":"m1_05_exists_eq_self","target":"Nonempty α → ∃ x : α, x = x","negative_check":"m1_neg_01_not_one_lt_zero"},
+    {"id":"M1-06","class":"logic","lean_declaration":"m1_06_or_comm","target":"P ∨ Q → Q ∨ P","negative_check":"m1_neg_03_not_zero_lt_zero"},
+    {"id":"M1-07","class":"order","lean_declaration":"m1_07_mul_le_mul_left","target":"a ≤ b → c*a ≤ c*b for Nat","negative_check":"m1_neg_02_not_all_zero_lt"},
+    {"id":"M1-08","class":"sets","lean_declaration":"m1_08_inter_subset_right","target":"A ∩ B ⊆ B","negative_check":"m1_neg_03_not_zero_lt_zero"},
+    {"id":"M1-09","class":"arithmetic","lean_declaration":"m1_09_dvd_refl","target":"n ∣ n","negative_check":"m1_neg_01_not_one_lt_zero"},
+    {"id":"M1-10","class":"logic","lean_declaration":"m1_10_exists_zero","target":"∃ n : Nat, n = 0","negative_check":"m1_neg_03_not_zero_lt_zero"}
+  ]
+}

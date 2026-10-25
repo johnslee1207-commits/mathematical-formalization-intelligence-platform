@@ -11,5 +11,8 @@ theorem m1_neg_02_not_all_zero_lt : ¬ (∀ n : Nat, 0 < n) := by
   have h0 := h 0
   omega
 
+theorem m1_neg_03_not_zero_lt_zero : ¬ ((0 : Nat) < 0) := by
+  omega
+
 end M1
 

@@ -11,7 +11,7 @@ Set-Location -LiteralPath $projectRoot
 & "$PSScriptRoot\test_m1_negative.ps1"
 & "$PSScriptRoot\verify_m1.ps1" -EnvironmentProfilePath $EnvironmentProfilePath
 
-$manifestPath = Join-Path $projectRoot 'benchmarks/m1_benchmark_05.json'
+$manifestPath = Join-Path $projectRoot 'benchmarks/m1_benchmark_10.json'
 $reportPath = Join-Path $projectRoot 'reports/m1_acceptance_report.json'
 $registryPath = Join-Path $projectRoot 'manifests/data_layers/registry.json'
 $sourcePath = Join-Path $projectRoot 'M1/Benchmark.lean'

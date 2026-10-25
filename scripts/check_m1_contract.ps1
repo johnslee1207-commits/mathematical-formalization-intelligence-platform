@@ -8,7 +8,7 @@ $projectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 Set-Location -LiteralPath $projectRoot
 
 $contract = Get-Content -Raw (Join-Path $projectRoot 'M1/phase_contract.json') | ConvertFrom-Json
-$manifest = Get-Content -Raw (Join-Path $projectRoot 'benchmarks/m1_benchmark_05.json') | ConvertFrom-Json
+$manifest = Get-Content -Raw (Join-Path $projectRoot 'benchmarks/m1_benchmark_10.json') | ConvertFrom-Json
 $benchmarkSource = Get-Content -Raw (Join-Path $projectRoot 'M1/Benchmark.lean')
 $negativeSource = Get-Content -Raw (Join-Path $projectRoot 'M1/Negative.lean')
 if ($contract.schema -ne 'm1-task-contract.v1') { throw 'M1 contract schema mismatch' }
@@ -21,8 +21,8 @@ if (-not $contract.replay_policy.hash_manifest) { throw 'M1 replay must hash the
 if (-not $contract.replay_policy.hash_sources) { throw 'M1 replay must hash sources' }
 if (-not $contract.replay_policy.hash_data_layer_registry) { throw 'M1 replay must hash the registry' }
 if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'M1/README.md'))) { throw 'M1 README is missing' }
-if ($manifest.benchmark_id -ne 'm1-lean-formalization-05') { throw 'M1 benchmark ID mismatch' }
-if ($manifest.cases.Count -ne 5) { throw 'M1 benchmark must contain exactly five cases' }
+if ($manifest.benchmark_id -ne 'm1-lean-formalization-10') { throw 'M1 benchmark ID mismatch' }
+if ($manifest.cases.Count -ne 10) { throw 'M1 benchmark must contain exactly ten cases' }
 $caseIds = @($manifest.cases.id)
 $declarations = @($manifest.cases.lean_declaration)
 $negativeChecks = @($manifest.cases.negative_check | Sort-Object -Unique)
