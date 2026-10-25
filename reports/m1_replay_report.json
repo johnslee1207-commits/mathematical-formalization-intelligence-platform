@@ -7,5 +7,6 @@
   "negative_source_sha256": "E73B7293C5F792DA1E3F0A3F40F01E43450DC4A880FD30BEB76DE8A28D4A78A5",
   "toolchain": "leanprover/lean4:v4.35.0",
   "acceptance_status": "pass",
+  "negative_contract_status": "pass",
   "replay_status": "pass"
 }

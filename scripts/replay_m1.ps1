@@ -8,6 +8,7 @@ $projectRoot = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
 
 & "$PSScriptRoot\check_m1_contract.ps1"
+& "$PSScriptRoot\test_m1_negative.ps1"
 & "$PSScriptRoot\verify_m1.ps1" -EnvironmentProfilePath $EnvironmentProfilePath
 
 $manifest = Get-Content -Raw 'benchmarks\m1_benchmark_05.json' | ConvertFrom-Json
@@ -31,6 +32,7 @@ if ($report.negative_source_sha256 -ne $negativeHash) { throw 'M1 replay failed:
   negative_source_sha256 = $negativeHash
   toolchain = (Get-Content -Raw 'lean-toolchain').Trim()
   acceptance_status = $report.status
+  negative_contract_status = 'pass'
   replay_status = 'pass'
 } | ConvertTo-Json -Depth 5 | Set-Content 'reports\m1_replay_report.json' -Encoding utf8
 

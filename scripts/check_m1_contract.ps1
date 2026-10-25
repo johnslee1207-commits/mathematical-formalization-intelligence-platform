@@ -1,8 +1,10 @@
 [CmdletBinding()]
-param()
+param(
+  [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot)
+)
 
 $ErrorActionPreference = 'Stop'
-$projectRoot = Split-Path -Parent $PSScriptRoot
+$projectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 Set-Location -LiteralPath $projectRoot
 
 $contract = Get-Content -Raw 'M1\phase_contract.json' | ConvertFrom-Json
