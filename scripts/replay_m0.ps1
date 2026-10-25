@@ -10,6 +10,8 @@ if ($profile.elan_home) { $env:ELAN_HOME = $profile.elan_home }
 if ($profile.elan_bin) { $env:Path = $profile.elan_bin + [IO.Path]::PathSeparator + $env:Path }
 Set-Location -LiteralPath $projectRoot
 
+& "$PSScriptRoot\check_m0_contract.ps1"
+
 $manifest = Get-Content -Raw 'benchmarks\m0_benchmark_10.json' | ConvertFrom-Json
 $registry = Get-Content -Raw 'manifests\data_layers\registry.json' | ConvertFrom-Json
 if ($manifest.cases.Count -ne 10) { throw 'Replay failed: benchmark case count is not 10' }

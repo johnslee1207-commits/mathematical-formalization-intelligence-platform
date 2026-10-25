@@ -6,5 +6,6 @@
 - `manifests/data_layers/registry.json` classifies persistent project paths.
 - `config/local/m0_environment.json` owns machine-specific Lean/Elan paths.
 - Use `scripts/verify_m0.ps1` as the acceptance entry point.
+- Use `scripts/check_m0_contract.ps1` as the independent benchmark/data-layer contract verifier.
 - Use `scripts/replay_m0.ps1` to verify that the locked benchmark and data-layer registry replay successfully.
 - Keep the Lean toolchain and Mathlib revisions locked by `lean-toolchain` and `lake-manifest.json`.
