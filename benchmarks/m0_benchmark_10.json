@@ -1,0 +1,17 @@
+{
+  "benchmark_id": "m0-lean-formalization-10",
+  "version": "0.1.0",
+  "oracle": "lake build",
+  "cases": [
+    {"id":"M0-01","class":"logic","lean_declaration":"m0_01_and_left","target":"(P ∧ Q) → P","negative_check":"m0_neg_01_not_two_dvd_three"},
+    {"id":"M0-02","class":"logic","lean_declaration":"m0_02_dne","target":"¬¬P → P under Classical","negative_check":"m0_neg_02_not_forall_succ_le"},
+    {"id":"M0-03","class":"arithmetic","lean_declaration":"m0_03_even_add_even","target":"Even a → Even b → Even (a+b)","negative_check":"m0_neg_01_not_two_dvd_three"},
+    {"id":"M0-04","class":"arithmetic","lean_declaration":"m0_04_three_dvd_twelve","target":"(3 : Nat) ∣ 12","negative_check":"m0_neg_01_not_two_dvd_three"},
+    {"id":"M0-05","class":"order","lean_declaration":"m0_05_add_le_add_right","target":"a ≤ b → ∀ c, a+c ≤ b+c","negative_check":"m0_neg_02_not_forall_succ_le"},
+    {"id":"M0-06","class":"induction","lean_declaration":"m0_06_sum_range_id","target":"∑ i ∈ range n, i = n*(n-1)/2","negative_check":"m0_neg_02_not_forall_succ_le"},
+    {"id":"M0-07","class":"sets","lean_declaration":"m0_07_subset_trans","target":"A ⊆ B → B ⊆ C → A ⊆ C","negative_check":"m0_neg_02_not_forall_succ_le"},
+    {"id":"M0-08","class":"finite","lean_declaration":"m0_08_card_image_le","target":"card (image f s) ≤ card s","negative_check":"m0_neg_01_not_two_dvd_three"},
+    {"id":"M0-09","class":"algebra","lean_declaration":"m0_09_one_mul","target":"1*x = x in a Group","negative_check":"m0_neg_01_not_two_dvd_three"},
+    {"id":"M0-10","class":"counterexample","lean_declaration":"m0_10_not_forall_succ_le","target":"(∀ n, n+1 ≤ n) → False","negative_check":"m0_neg_02_not_forall_succ_le"}
+  ]
+}

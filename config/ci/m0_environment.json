@@ -1,0 +1,7 @@
+{
+  "schema": "m0-ci-environment-profile.v1",
+  "elan_home": "",
+  "elan_bin": "",
+  "project_toolchain": "leanprover/lean4:v4.35.0",
+  "profile_scope": "ci"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "m0-acceptance-report.v1",
+  "benchmark_id": "m0-lean-formalization-10",
+  "case_count": 10,
+  "class_counts": {
+    "algebra": 1,
+    "arithmetic": 2,
+    "counterexample": 1,
+    "finite": 1,
+    "induction": 1,
+    "logic": 2,
+    "order": 1,
+    "sets": 1
+  },
+  "negative_check_count": 2,
+  "manifest_sha256": "28B47E4FBED63CD25E2E11CF9531697EB4D42857AAA699DE16F1EF20127D4E59",
+  "benchmark_source_sha256": "82A736A3293118DE62F612A1A58A09AA5DF41ADAC64267C987BD031326E72470",
+  "negative_source_sha256": "D49FA15E5F85A18AA6017CCCB829A8AF40051E205FBD77A7C3C9C92ACF299902",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "lean": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lake": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "status": "pass"
+}

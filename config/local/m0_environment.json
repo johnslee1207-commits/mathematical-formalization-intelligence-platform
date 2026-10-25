@@ -1,0 +1,7 @@
+{
+  "schema": "m0-local-environment-profile.v1",
+  "elan_home": "E:\\tools\\elan",
+  "elan_bin": "E:\\tools\\elan\\bin",
+  "project_toolchain": "leanprover/lean4:v4.35.0",
+  "profile_scope": "local_machine_specific"
+}

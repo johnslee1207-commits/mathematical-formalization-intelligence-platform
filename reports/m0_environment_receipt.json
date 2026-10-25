@@ -1,0 +1,14 @@
+{
+  "schema": "m0-lean-environment-receipt.v1",
+  "verified_on": "2026-10-24",
+  "project_root": "E:\\Projects\\mathematical-formalization-intelligence-platform",
+  "elan_home": "E:\\tools\\elan",
+  "elan_version": "4.2.4",
+  "lean_version": "4.35.0",
+  "lake_version": "5.0.0-src+eb6cafb",
+  "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "toolchain_file": "leanprover/lean4:v4.35.0",
+  "acceptance_command": "scripts/verify_m0.ps1",
+  "acceptance_status": "pass",
+  "acceptance_summary": "M0 benchmark builds successfully with lake build"
+}

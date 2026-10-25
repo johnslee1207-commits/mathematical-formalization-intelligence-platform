@@ -1,0 +1,15 @@
+{
+  "schema": "m0-data-layer-registry.v1",
+  "layers": {
+    "platform_common": ["scripts/", "AGENTS.md"],
+    "domain_common": ["benchmarks/", "M0/"],
+    "runtime_generated": ["reports/", ".lake/"],
+    "local_machine_specific": ["config/local/", "config/ci/", "lean-toolchain", "lake-manifest.json", "lakefile.toml"]
+  },
+  "review_gates": {
+    "platform_common": "code_review_and_focused_build",
+    "domain_common": "benchmark_contract_review_and_lean_build",
+    "runtime_generated": "replay_and_evidence_integrity_check",
+    "local_machine_specific": "toolchain_and_dependency_lock_check"
+  }
+}
