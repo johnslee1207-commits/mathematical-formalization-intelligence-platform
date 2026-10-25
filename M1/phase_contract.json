@@ -1,0 +1,70 @@
+{
+  "schema": "m1-task-contract.v1",
+  "phase": "M1",
+  "title": "Benchmark expansion and portable replay",
+  "status": "started",
+  "objective": "Expand the formalization benchmark while preserving reproducible Lean/Mathlib evidence and data/program separation.",
+  "boundary": {
+    "in_scope": [
+      "E:/Projects/mathematical-formalization-intelligence-platform",
+      "M1 benchmark contracts, Lean proofs, negative corpus, validators, replay evidence"
+    ],
+    "out_of_scope": [
+      "AetherOS",
+      "Cognisphere",
+      "cognisphere-db",
+      "production service integration",
+      "remote push automation"
+    ]
+  },
+  "deliverables": [
+    {
+      "id": "M1-T1",
+      "name": "Benchmark contract expansion",
+      "acceptance": "Add a versioned M1 benchmark manifest with at least 5 new cases and explicit proof/negative mappings."
+    },
+    {
+      "id": "M1-T2",
+      "name": "Lean proof slice",
+      "acceptance": "Every M1 positive declaration compiles under the locked Lean and Mathlib revisions."
+    },
+    {
+      "id": "M1-T3",
+      "name": "Negative corpus slice",
+      "acceptance": "At least 2 distinct negative checks compile and are referenced by the manifest."
+    },
+    {
+      "id": "M1-T4",
+      "name": "Independent contract verifier",
+      "acceptance": "A verifier detects missing fields, duplicate IDs, missing declarations, and unregistered data paths without invoking the proof build."
+    },
+    {
+      "id": "M1-T5",
+      "name": "Replay evidence",
+      "acceptance": "A replay command validates M1 inputs, runs the focused build, and emits hash-bound evidence."
+    }
+  ],
+  "oracle": {
+    "positive": "lake build",
+    "contract": "scripts/check_m1_contract.ps1",
+    "replay": "scripts/replay_m1.ps1"
+  },
+  "negative_corpus_requirements": {
+    "minimum_distinct_checks": 2,
+    "must_be_executable": true,
+    "must_be_hash_bound_in_evidence": true
+  },
+  "replay_policy": {
+    "locked_toolchain": true,
+    "hash_manifest": true,
+    "hash_sources": true,
+    "hash_data_layer_registry": true,
+    "no_external_repository_mutation": true
+  },
+  "independent_verifier": {
+    "must_run_without_lake_build": true,
+    "must_validate_manifest_schema": true,
+    "must_validate_source_mappings": true,
+    "must_validate_registry_paths": true
+  }
+}

@@ -28,6 +28,10 @@ Set-Location E:\\Projects\\mathematical-formalization-intelligence-platform
 
 重放会校验基准数量、数据层登记、Lean 构建，以及基准、证明源文件和锁定工具链的输入哈希，并生成 `reports/m0_replay_report.json`。
 
+## 后续阶段 M1
+
+M1 已启动，目标是扩展基准集和负例覆盖，同时保持可重放证据。阶段契约位于 `M1/phase_contract.json`，可先运行 `scripts/check_m1_contract.ps1`。
+
 官方安装参考：
 
 - https://lean-lang.org/install/manual/
