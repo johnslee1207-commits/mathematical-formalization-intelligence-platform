@@ -1,0 +1,8 @@
+{
+  "schema": "m2-replay-report.v1",
+  "index_sha256": "40950A99112125F91981CC302F52A7AF3AA0E9ADB819763B52F9F5941C35EFD6",
+  "registry_sha256": "613B5268028558D36DE9FAD9FE58B5707D7B0A541A991DBE19869AC13B33F238",
+  "phase_count": 2,
+  "acceptance_status": "pass",
+  "replay_status": "pass"
+}

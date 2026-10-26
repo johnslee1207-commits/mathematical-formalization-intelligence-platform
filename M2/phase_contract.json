@@ -27,7 +27,8 @@
   "oracle": {
     "contract": "scripts/check_m2_contract.ps1",
     "replay": "scripts/replay_m2.ps1",
-    "evidence": "reports/m2_evidence_index.json"
+    "evidence": "reports/m2_evidence_index.json",
+    "replay_report": "reports/m2_replay_report.json"
   },
   "replay_policy": {
     "locked_toolchain": true,

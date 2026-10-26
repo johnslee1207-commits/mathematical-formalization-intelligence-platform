@@ -15,4 +15,6 @@ M2 在已完成的 M0/M1 基础上，建立跨阶段证据链和统一元数据�
 - 契约：M2/phase_contract.json
 - 独立契约检查：scripts/check_m2_contract.ps1
 - 后续回放入口：scripts/replay_m2.ps1
+- 证据索引：reports/m2_evidence_index.json
+- 回放报告：reports/m2_replay_report.json
 
