@@ -8,5 +8,6 @@
 - Use `scripts/verify_m0.ps1` as the acceptance entry point.
 - Use `scripts/check_m0_contract.ps1` as the independent benchmark/data-layer contract verifier.
 - Use `scripts/check_m1_contract.ps1` to validate the started M1 phase contract before adding M1 proof code.
+- Use `scripts/check_m2_contract.ps1` to validate the M2 evidence-index phase contract before implementation.
 - Use `scripts/replay_m0.ps1` to verify that the locked benchmark and data-layer registry replay successfully.
 - Keep the Lean toolchain and Mathlib revisions locked by `lean-toolchain` and `lake-manifest.json`.

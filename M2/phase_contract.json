@@ -1,0 +1,38 @@
+{
+  "schema": "m2-task-contract.v1",
+  "phase": "M2",
+  "title": "Cross-phase evidence index and benchmark normalization",
+  "status": "started",
+  "objective": "Unify M0/M1 benchmark metadata and evidence lineage so future formalization phases can be added without weakening replay guarantees.",
+  "boundary": {
+    "in_scope": [
+      "E:/Projects/mathematical-formalization-intelligence-platform",
+      "M0/M1 evidence aggregation, benchmark metadata normalization, corruption gates, CI evidence"
+    ],
+    "out_of_scope": [
+      "AetherOS",
+      "Cognisphere",
+      "cognisphere-db",
+      "production theorem synthesis",
+      "external repository mutation beyond the authorized GitHub remote"
+    ]
+  },
+  "deliverables": [
+    {"id": "M2-T1", "name": "Cross-phase evidence index", "acceptance": "Generate a versioned index linking M0/M1 reports to benchmark IDs, source hashes, toolchains and replay status."},
+    {"id": "M2-T2", "name": "Benchmark metadata normalization", "acceptance": "Validate a common metadata contract across M0 and M1 without duplicating theorem policy in executable scripts."},
+    {"id": "M2-T3", "name": "Corruption and replay gates", "acceptance": "Reject mismatched report hashes, benchmark IDs, schemas and unregistered paths in temporary fixtures."},
+    {"id": "M2-T4", "name": "CI evidence binding", "acceptance": "Record which environment profile and workflow entry point produced each replay result."},
+    {"id": "M2-T5", "name": "Readiness gate", "acceptance": "Produce a machine-checkable M2 readiness report before adding the next benchmark phase."}
+  ],
+  "oracle": {
+    "contract": "scripts/check_m2_contract.ps1",
+    "replay": "scripts/replay_m2.ps1",
+    "evidence": "reports/m2_evidence_index.json"
+  },
+  "replay_policy": {
+    "locked_toolchain": true,
+    "cross_phase_hash_lineage": true,
+    "temporary_fixture_negative_tests": true,
+    "no_unreviewed_external_mutation": true
+  }
+}
