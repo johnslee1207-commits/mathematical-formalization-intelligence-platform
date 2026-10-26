@@ -1,0 +1,12 @@
+{
+  "schema": "m2-benchmark-metadata-contract.v1",
+  "manifest_paths": {
+    "M0": "benchmarks/m0_benchmark_10.json",
+    "M1": "benchmarks/m1_benchmark_10.json"
+  },
+  "required_manifest_fields": ["benchmark_id", "version", "oracle", "cases"],
+  "required_case_fields": ["id", "class", "lean_declaration", "target", "negative_check"],
+  "benchmark_id_prefixes": {"M0": "m0-", "M1": "m1-"},
+  "id_prefixes": {"M0": "M0-", "M1": "M1-"},
+  "profile_scope": "local_machine_specific"
+}

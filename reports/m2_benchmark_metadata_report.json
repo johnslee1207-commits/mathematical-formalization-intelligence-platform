@@ -1,0 +1,28 @@
+{
+  "schema": "m2-benchmark-metadata-report.v1",
+  "generated_by": "scripts/check_m2_metadata.ps1",
+  "contract_sha256": "26AAE7F1481C0A43C27F737915A792D616B7E1888A82B4F56609A65BE638383F",
+  "manifests": [
+    {
+      "phase": "M0",
+      "manifest_path": "benchmarks/m0_benchmark_10.json",
+      "benchmark_id": "m0-lean-formalization-10",
+      "version": "0.1.0",
+      "oracle": "lake build",
+      "case_count": 10,
+      "manifest_sha256": "28B47E4FBED63CD25E2E11CF9531697EB4D42857AAA699DE16F1EF20127D4E59",
+      "profile_scope": "local_machine_specific"
+    },
+    {
+      "phase": "M1",
+      "manifest_path": "benchmarks/m1_benchmark_10.json",
+      "benchmark_id": "m1-lean-formalization-10",
+      "version": "0.2.0",
+      "oracle": "lake build",
+      "case_count": 10,
+      "manifest_sha256": "FC668F79F6E5C99173AEA9D281277F8526BF3CB8FEEA87B4EDBC3525D9E718F5",
+      "profile_scope": "local_machine_specific"
+    }
+  ],
+  "status": "pass"
+}
