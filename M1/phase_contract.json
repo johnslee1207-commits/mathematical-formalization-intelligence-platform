@@ -2,7 +2,7 @@
   "schema": "m1-task-contract.v1",
   "phase": "M1",
   "title": "Benchmark expansion and portable replay",
-  "status": "in_progress",
+  "status": "completed",
   "objective": "Expand the formalization benchmark while preserving reproducible Lean/Mathlib evidence and data/program separation.",
   "boundary": {
     "in_scope": [
