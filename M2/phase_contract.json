@@ -29,6 +29,7 @@
     "metadata": "scripts/check_m2_metadata.ps1",
     "negative_tests": "scripts/test_m2_corruption.ps1",
     "ci_binding": "scripts/check_m2_ci_binding.ps1",
+    "readiness": "scripts/check_m2_readiness.ps1",
     "replay": "scripts/replay_m2.ps1",
     "evidence": "reports/m2_evidence_index.json",
     "replay_report": "reports/m2_replay_report.json"

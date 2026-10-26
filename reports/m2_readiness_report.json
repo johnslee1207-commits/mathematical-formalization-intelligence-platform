@@ -1,0 +1,14 @@
+{
+  "schema": "m2-readiness-report.v1",
+  "phase": "M2",
+  "contract_schema": "m2-task-contract.v1",
+  "evidence_reports": [
+    "m2_evidence_index.json",
+    "m2_benchmark_metadata_report.json",
+    "m2_ci_binding_report.json",
+    "m2_replay_report.json"
+  ],
+  "blocking_items": [],
+  "next_phase_allowed": true,
+  "status": "ready"
+}

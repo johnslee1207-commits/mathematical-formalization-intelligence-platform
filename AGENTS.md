@@ -12,5 +12,6 @@
 - Use `scripts/check_m2_metadata.ps1` to validate the common M0/M1 benchmark metadata contract.
 - Use `scripts/test_m2_corruption.ps1` to validate M2 corruption and unregistered-path rejection.
 - Use `scripts/check_m2_ci_binding.ps1` to validate replay reports against the CI workflow and environment profiles.
+- Use `scripts/check_m2_readiness.ps1` to produce the machine-checkable M2 readiness report.
 - Use `scripts/replay_m0.ps1` to verify that the locked benchmark and data-layer registry replay successfully.
 - Keep the Lean toolchain and Mathlib revisions locked by `lean-toolchain` and `lake-manifest.json`.
