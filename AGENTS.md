@@ -10,5 +10,6 @@
 - Use `scripts/check_m1_contract.ps1` to validate the started M1 phase contract before adding M1 proof code.
 - Use `scripts/check_m2_contract.ps1` to validate the M2 evidence-index phase contract before implementation.
 - Use `scripts/check_m2_metadata.ps1` to validate the common M0/M1 benchmark metadata contract.
+- Use `scripts/test_m2_corruption.ps1` to validate M2 corruption and unregistered-path rejection.
 - Use `scripts/replay_m0.ps1` to verify that the locked benchmark and data-layer registry replay successfully.
 - Keep the Lean toolchain and Mathlib revisions locked by `lean-toolchain` and `lake-manifest.json`.

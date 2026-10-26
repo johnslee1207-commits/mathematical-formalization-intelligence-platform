@@ -8,10 +8,13 @@ $projectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 $contractPath = Join-Path $projectRoot 'benchmarks/m2_metadata_contract.json'
 $contract = Get-Content -Raw -LiteralPath $contractPath | ConvertFrom-Json
 if ($contract.schema -ne 'm2-benchmark-metadata-contract.v1') { throw 'M2 metadata contract schema mismatch' }
+$registry = Get-Content -Raw -LiteralPath (Join-Path $projectRoot 'manifests/data_layers/registry.json') | ConvertFrom-Json
 
 $entries = @()
 foreach ($phase in @('M0', 'M1')) {
   $relativePath = $contract.manifest_paths.$phase
+  $registered = @($registry.layers.domain_common | Where-Object { $relativePath.StartsWith([string]$_) }).Count -gt 0
+  if (-not $registered) { throw "$phase manifest path is not registered: $relativePath" }
   $path = Join-Path $projectRoot $relativePath
   if (-not (Test-Path -LiteralPath $path)) { throw "$phase manifest is missing: $relativePath" }
   $manifest = Get-Content -Raw -LiteralPath $path | ConvertFrom-Json
