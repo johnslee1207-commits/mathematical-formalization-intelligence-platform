@@ -1,0 +1,23 @@
+{
+  "schema": "m2-ci-binding-report.v1",
+  "workflow_sha256": "A7B061E25EA3254E1689589A0632148976A8E180ED1A10100F013C25AB9ED258",
+  "bindings": [
+    {
+      "phase": "M0",
+      "environment_profile": "config\\local\\m0_environment.json",
+      "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
+      "replay_entry_point": "scripts/replay_m0.ps1",
+      "profile_scope": "local_machine_specific",
+      "replay_status": "pass"
+    },
+    {
+      "phase": "M1",
+      "environment_profile": "config\\local\\m0_environment.json",
+      "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
+      "replay_entry_point": "scripts/replay_m1.ps1",
+      "profile_scope": "local_machine_specific",
+      "replay_status": "pass"
+    }
+  ],
+  "status": "pass"
+}

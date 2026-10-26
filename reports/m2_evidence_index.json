@@ -13,7 +13,10 @@
       "benchmark_source_sha256": "82A736A3293118DE62F612A1A58A09AA5DF41ADAC64267C987BD031326E72470",
       "negative_source_sha256": "D49FA15E5F85A18AA6017CCCB829A8AF40051E205FBD77A7C3C9C92ACF299902",
       "toolchain": "leanprover/lean4:v4.35.0",
-      "profile_scope": "local_machine_specific"
+      "profile_scope": "local_machine_specific",
+      "environment_profile": "config\\local\\m0_environment.json",
+      "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
+      "replay_entry_point": "scripts/replay_m0.ps1"
     },
     {
       "phase": "M1",
@@ -25,7 +28,10 @@
       "benchmark_source_sha256": "6DC70E04498E8787080A22D660068FE0173A1C31E952D56450483AB37F8CD0C1",
       "negative_source_sha256": "05F267E5C1822FB6E1E94709DCF106517F8B738A8E72E5B96E46347E31732E94",
       "toolchain": "leanprover/lean4:v4.35.0",
-      "profile_scope": "local_machine_specific"
+      "profile_scope": "local_machine_specific",
+      "environment_profile": "config\\local\\m0_environment.json",
+      "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
+      "replay_entry_point": "scripts/replay_m1.ps1"
     }
   ],
   "status": "pass"

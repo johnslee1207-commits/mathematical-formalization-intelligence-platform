@@ -6,6 +6,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $profile = Get-Content -Raw -LiteralPath $EnvironmentProfilePath | ConvertFrom-Json
+$profileRelativePath = [IO.Path]::GetRelativePath($projectRoot, (Resolve-Path -LiteralPath $EnvironmentProfilePath).Path).Replace('\\', '/')
 if ($profile.elan_home) { $env:ELAN_HOME = $profile.elan_home }
 if ($profile.elan_bin) { $env:Path = $profile.elan_bin + [IO.Path]::PathSeparator + $env:Path }
 Set-Location -LiteralPath $projectRoot
@@ -41,6 +42,10 @@ if ($report.negative_source_sha256 -ne $expectedNegativeHash) { throw 'Replay fa
   registry_sha256 = $expectedRegistryHash
   benchmark_source_sha256 = $expectedBenchmarkHash
   negative_source_sha256 = $expectedNegativeHash
+  profile_scope = $profile.profile_scope
+  environment_profile = $profileRelativePath
+  workflow_entry_point = '.github/workflows/lean_action_ci.yml'
+  replay_entry_point = 'scripts/replay_m0.ps1'
   toolchain = (Get-Content -Raw 'lean-toolchain').Trim()
   acceptance_status = $report.status
   replay_status = 'pass'

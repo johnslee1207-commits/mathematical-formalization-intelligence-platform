@@ -6,6 +6,8 @@ param(
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
+$profile = Get-Content -Raw -LiteralPath $EnvironmentProfilePath | ConvertFrom-Json
+$profileRelativePath = [IO.Path]::GetRelativePath($projectRoot, (Resolve-Path -LiteralPath $EnvironmentProfilePath).Path).Replace('\\', '/')
 
 & "$PSScriptRoot\check_m1_contract.ps1"
 & "$PSScriptRoot\test_m1_negative.ps1"
@@ -39,6 +41,9 @@ if ($report.negative_source_sha256 -ne $negativeHash) { throw 'M1 replay failed:
   benchmark_source_sha256 = $sourceHash
   negative_source_sha256 = $negativeHash
   profile_scope = $report.profile_scope
+  environment_profile = $profileRelativePath
+  workflow_entry_point = '.github/workflows/lean_action_ci.yml'
+  replay_entry_point = 'scripts/replay_m1.ps1'
   data_layer_registry_sha256 = $registryHash
   toolchain = (Get-Content -Raw (Join-Path $projectRoot 'lean-toolchain')).Trim()
   acceptance_status = $report.status

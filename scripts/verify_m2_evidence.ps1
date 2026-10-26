@@ -31,6 +31,9 @@ foreach ($pair in @(@($m0Acceptance, $m0Replay), @($m1Acceptance, $m1Replay))) {
     if ($pair[0].$field -ne $pair[1].$field) { throw "Acceptance/replay hash mismatch: $field" }
   }
   if ($pair[0].toolchain -ne $pair[1].toolchain) { throw 'Acceptance/replay toolchain mismatch' }
+  foreach ($field in @('environment_profile', 'workflow_entry_point', 'replay_entry_point', 'profile_scope')) {
+    if ([string]::IsNullOrWhiteSpace([string]$pair[1].$field)) { throw "Replay report is missing CI evidence binding: $field" }
+  }
 }
 
 $registryHash = (Get-FileHash (Join-Path $projectRoot 'manifests/data_layers/registry.json') -Algorithm SHA256).Hash
@@ -48,7 +51,10 @@ $entries = @(
     benchmark_source_sha256 = $m0Acceptance.benchmark_source_sha256
     negative_source_sha256 = $m0Acceptance.negative_source_sha256
     toolchain = $m0Acceptance.toolchain
-    profile_scope = 'local_machine_specific'
+    profile_scope = $m0Replay.profile_scope
+    environment_profile = $m0Replay.environment_profile
+    workflow_entry_point = $m0Replay.workflow_entry_point
+    replay_entry_point = $m0Replay.replay_entry_point
   },
   [pscustomobject]@{
     phase = 'M1'
@@ -61,6 +67,9 @@ $entries = @(
     negative_source_sha256 = $m1Acceptance.negative_source_sha256
     toolchain = $m1Acceptance.toolchain
     profile_scope = $m1Acceptance.profile_scope
+    environment_profile = $m1Replay.environment_profile
+    workflow_entry_point = $m1Replay.workflow_entry_point
+    replay_entry_point = $m1Replay.replay_entry_point
   }
 )
 

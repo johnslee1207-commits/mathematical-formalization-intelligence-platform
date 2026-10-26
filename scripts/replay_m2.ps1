@@ -8,6 +8,7 @@ Set-Location -LiteralPath $projectRoot
 & "$PSScriptRoot\check_m2_contract.ps1"
 & "$PSScriptRoot\check_m2_metadata.ps1"
 & "$PSScriptRoot\test_m2_corruption.ps1"
+& "$PSScriptRoot\check_m2_ci_binding.ps1"
 & "$PSScriptRoot\verify_m2_evidence.ps1"
 
 $indexPath = Join-Path $projectRoot 'reports/m2_evidence_index.json'

@@ -16,6 +16,7 @@ M2 在已完成的 M0/M1 基础上，建立跨阶段证据链和统一元数据�
 - 独立契约检查：scripts/check_m2_contract.ps1
 - 基准元数据检查：scripts/check_m2_metadata.ps1
 - 损坏证据负例：scripts/test_m2_corruption.ps1
+- CI 证据绑定：scripts/check_m2_ci_binding.ps1
 - 后续回放入口：scripts/replay_m2.ps1
 - 证据索引：reports/m2_evidence_index.json
 - 回放报告：reports/m2_replay_report.json

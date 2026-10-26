@@ -5,6 +5,10 @@
   "registry_sha256": "613B5268028558D36DE9FAD9FE58B5707D7B0A541A991DBE19869AC13B33F238",
   "benchmark_source_sha256": "82A736A3293118DE62F612A1A58A09AA5DF41ADAC64267C987BD031326E72470",
   "negative_source_sha256": "D49FA15E5F85A18AA6017CCCB829A8AF40051E205FBD77A7C3C9C92ACF299902",
+  "profile_scope": "local_machine_specific",
+  "environment_profile": "config\\local\\m0_environment.json",
+  "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
+  "replay_entry_point": "scripts/replay_m0.ps1",
   "toolchain": "leanprover/lean4:v4.35.0",
   "acceptance_status": "pass",
   "replay_status": "pass"
