@@ -1,7 +1,7 @@
 {
   "schema": "m2-evidence-index.v1",
   "generated_by": "scripts/verify_m2_evidence.ps1",
-  "registry_sha256": "C261FAB84FEA94F3BCA8CAB852CBCAD56841EA53CA81D98DFC815AB3EB96CC54",
+  "registry_sha256": "4ACCFD81CB0DF46CFA5F6400F2BD9DBB517F5DB2CD77CDDC8E48827C67336620",
   "phases": [
     {
       "phase": "M0",

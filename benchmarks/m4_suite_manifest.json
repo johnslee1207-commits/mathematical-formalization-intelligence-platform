@@ -1,0 +1,10 @@
+{
+  "schema": "m4-suite-manifest.v1",
+  "suite_id": "formalization-ready-suite-04",
+  "phases": [
+    {"phase":"M0","readiness":"reports/m0_acceptance_report.json","replay":"reports/m0_replay_report.json"},
+    {"phase":"M1","readiness":"reports/m1_acceptance_report.json","replay":"reports/m1_replay_report.json"},
+    {"phase":"M2","readiness":"reports/m2_readiness_report.json","replay":"reports/m2_replay_report.json"},
+    {"phase":"M3","readiness":"reports/m3_readiness_report.json","replay":"reports/m3_replay_report.json"}
+  ]
+}

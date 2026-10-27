@@ -1,0 +1,30 @@
+{
+  "schema": "m4-task-contract.v1",
+  "phase": "M4",
+  "title": "Benchmark suite selection and phase orchestration",
+  "status": "started",
+  "objective": "Provide a machine-checkable suite manifest that selects completed phase evidence without coupling orchestration policy to theorem source code.",
+  "boundary": {
+    "in_scope": ["E:/Projects/mathematical-formalization-intelligence-platform", "M0-M3 suite selection and replay lineage"],
+    "out_of_scope": ["AetherOS", "Cognisphere", "cognisphere-db", "production theorem synthesis", "unreviewed external mutation"]
+  },
+  "deliverables": [
+    {"id":"M4-T1","name":"Suite manifest","acceptance":"Declare the included completed phases and their evidence oracles as data."},
+    {"id":"M4-T2","name":"Independent selector","acceptance":"Reject missing, non-ready or mismatched phase evidence without invoking theorem policy."},
+    {"id":"M4-T3","name":"Selection negative corpus","acceptance":"Reject temporary suite manifest and readiness mutations."},
+    {"id":"M4-T4","name":"Deterministic suite replay","acceptance":"Emit hash-bound suite evidence from the locked local profile."},
+    {"id":"M4-T5","name":"M4 readiness gate","acceptance":"Produce a machine-checkable readiness report for the next benchmark phase."
+    }
+  ],
+  "oracle": {
+    "contract":"scripts/check_m4_contract.ps1",
+    "replay":"scripts/replay_m4.ps1",
+    "suite":"benchmarks/m4_suite_manifest.json",
+    "selector":"scripts/verify_m4_suite.ps1",
+    "negative_tests":"scripts/test_m4_negative.ps1",
+    "evidence":"reports/m4_suite_report.json",
+    "replay_report":"reports/m4_replay_report.json",
+    "readiness":"reports/m4_readiness_report.json"
+  },
+  "replay_policy": {"locked_toolchain":true,"phase_readiness_required":true,"temporary_fixture_negative_tests":true,"no_unreviewed_external_mutation":true}
+}

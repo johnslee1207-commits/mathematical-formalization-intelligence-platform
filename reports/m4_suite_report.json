@@ -1,0 +1,36 @@
+{
+  "schema": "m4-suite-report.v1",
+  "suite_id": "formalization-ready-suite-04",
+  "manifest_sha256": "F05B9FFAF843B77B01C3A13EE12782E66F94CD8D7544EBEE864C24C2B7C2CA7F",
+  "phases": [
+    {
+      "phase": "M0",
+      "readiness": "reports/m0_acceptance_report.json",
+      "replay": "reports/m0_replay_report.json",
+      "readiness_sha256": "A4942AF01E2C5EB7134DA2489515DE92AE117D8149AA12BB67CFB1F0F277C78A",
+      "replay_sha256": "776034D2A76BE8164FEC43567D5B252CE6C0CDAEDD9F46734462148105B58051"
+    },
+    {
+      "phase": "M1",
+      "readiness": "reports/m1_acceptance_report.json",
+      "replay": "reports/m1_replay_report.json",
+      "readiness_sha256": "08952A3CCD5318B962C33F23D5B6F85DCFD7964FD1E181B56B82A77D87F5FB2F",
+      "replay_sha256": "3124BDC93BD7B36D11DC7DB1EE925F960A725BA9C30304719D0EFC6E5BDD96F5"
+    },
+    {
+      "phase": "M2",
+      "readiness": "reports/m2_readiness_report.json",
+      "replay": "reports/m2_replay_report.json",
+      "readiness_sha256": "F309704B1AA014A490B8433EBA84637D7B504BC27D56ABD625462EB8C11A4831",
+      "replay_sha256": "B80BAFB97AA1BC5FEE5FDDEC3C34D29165BD7154DBE8623066998232764F5CF5"
+    },
+    {
+      "phase": "M3",
+      "readiness": "reports/m3_readiness_report.json",
+      "replay": "reports/m3_replay_report.json",
+      "readiness_sha256": "A8FB6D01155298C32464F8F9D57A2064CE725CD1E24EF5DEA888DB0EFE427178",
+      "replay_sha256": "83F9B20B78F6848663266C91BC9B50BC6CE8EFBA0D26372ED1F29C2CEFF6745B"
+    }
+  ],
+  "status": "pass"
+}

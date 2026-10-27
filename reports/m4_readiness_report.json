@@ -1,0 +1,7 @@
+{
+  "schema": "m4-readiness-report.v1",
+  "phase": "M4",
+  "blocking_items": [],
+  "next_phase_allowed": true,
+  "status": "ready"
+}
