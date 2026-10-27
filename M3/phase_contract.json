@@ -1,0 +1,40 @@
+{
+  "schema": "m3-task-contract.v1",
+  "phase": "M3",
+  "title": "Benchmark expansion and verifier isolation",
+  "status": "started",
+  "objective": "Extend the formalization benchmark while keeping theorem data, executable proofs, negative checks and acceptance evidence independently verifiable.",
+  "boundary": {
+    "in_scope": [
+      "E:/Projects/mathematical-formalization-intelligence-platform",
+      "M3 benchmark expansion, independent verifier surfaces, replay evidence"
+    ],
+    "out_of_scope": [
+      "AetherOS",
+      "Cognisphere",
+      "cognisphere-db",
+      "production theorem synthesis",
+      "unreviewed external repository mutation"
+    ]
+  },
+  "deliverables": [
+    {"id": "M3-T1", "name": "Expanded benchmark slice", "acceptance": "Add a versioned M3 manifest and Lean declarations with explicit negative checks."},
+    {"id": "M3-T2", "name": "Independent verifier", "acceptance": "Validate M3 metadata and source lineage without importing theorem policy from executable proof code."},
+    {"id": "M3-T3", "name": "Negative replay corpus", "acceptance": "Reject altered manifests, proof sources and negative checks in temporary fixtures."},
+    {"id": "M3-T4", "name": "Cross-phase evidence binding", "acceptance": "Bind M3 evidence to the M2 readiness report and locked toolchain."},
+    {"id": "M3-T5", "name": "M3 readiness gate", "acceptance": "Produce a machine-checkable readiness report before further benchmark growth."
+    }
+  ],
+  "oracle": {
+    "contract": "scripts/check_m3_contract.ps1",
+    "replay": "scripts/replay_m3.ps1",
+    "evidence": "reports/m3_acceptance_report.json",
+    "readiness": "reports/m3_readiness_report.json"
+  },
+  "replay_policy": {
+    "locked_toolchain": true,
+    "m2_readiness_required": true,
+    "temporary_fixture_negative_tests": true,
+    "no_unreviewed_external_mutation": true
+  }
+}
