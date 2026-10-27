@@ -9,6 +9,7 @@ $profile = Get-Content -Raw -LiteralPath $EnvironmentProfilePath | ConvertFrom-J
 if ($profile.elan_home) { $env:ELAN_HOME = $profile.elan_home }
 if ($profile.elan_bin) { $env:Path = $profile.elan_bin + [IO.Path]::PathSeparator + $env:Path }
 Set-Location -LiteralPath $projectRoot
+& "$PSScriptRoot\check_m3_lineage.ps1" -ProjectRoot $projectRoot
 
 $manifestPath = Join-Path $projectRoot 'benchmarks/m3_benchmark_05.json'
 $registryPath = Join-Path $projectRoot 'manifests/data_layers/registry.json'

@@ -11,6 +11,7 @@ Set-Location -LiteralPath $projectRoot
 
 & "$PSScriptRoot\check_m3_contract.ps1"
 & "$PSScriptRoot\verify_m3.ps1" -EnvironmentProfilePath $EnvironmentProfilePath
+& "$PSScriptRoot\test_m3_corruption.ps1" -ProjectRoot $projectRoot
 
 $acceptancePath = Join-Path $projectRoot 'reports/m3_acceptance_report.json'
 $readinessPath = Join-Path $projectRoot 'reports/m2_readiness_report.json'
@@ -39,5 +40,8 @@ if ($readiness.status -ne 'ready' -or -not $readiness.next_phase_allowed) { thro
   acceptance_status = $acceptance.status
   replay_status = 'pass'
 } | ConvertTo-Json -Depth 8 | Set-Content (Join-Path $projectRoot 'reports/m3_replay_report.json') -Encoding utf8
+
+& "$PSScriptRoot\check_m3_evidence.ps1" -ProjectRoot $projectRoot
+& "$PSScriptRoot\check_m3_readiness.ps1" -ProjectRoot $projectRoot
 
 Write-Host 'M3 deterministic replay: PASS'

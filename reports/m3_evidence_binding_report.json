@@ -1,0 +1,8 @@
+{
+  "schema": "m3-evidence-binding-report.v1",
+  "m2_readiness_sha256": "F309704B1AA014A490B8433EBA84637D7B504BC27D56ABD625462EB8C11A4831",
+  "registry_sha256": "C261FAB84FEA94F3BCA8CAB852CBCAD56841EA53CA81D98DFC815AB3EB96CC54",
+  "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
+  "environment_profile": "config\\local\\m0_environment.json",
+  "status": "pass"
+}

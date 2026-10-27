@@ -1,0 +1,8 @@
+{
+  "schema": "m3-readiness-report.v1",
+  "phase": "M3",
+  "contract_schema": "m3-task-contract.v1",
+  "blocking_items": [],
+  "next_phase_allowed": true,
+  "status": "ready"
+}
