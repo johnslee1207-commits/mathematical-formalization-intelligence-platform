@@ -19,3 +19,6 @@ name = "M0"
 
 [[lean_lib]]
 name = "M1"
+
+[[lean_lib]]
+name = "M3"

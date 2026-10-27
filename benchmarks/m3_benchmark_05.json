@@ -1,0 +1,12 @@
+{
+  "benchmark_id": "m3-lean-formalization-05",
+  "version": "0.1.0",
+  "oracle": "lake build M3",
+  "cases": [
+    {"id":"M3-01","class":"logic","lean_declaration":"m3_01_and_comm","target":"P ∧ Q → Q ∧ P","negative_check":"m3_neg_01_not_two_eq_three"},
+    {"id":"M3-02","class":"arithmetic","lean_declaration":"m3_02_nat_add_zero","target":"n + 0 = n","negative_check":"m3_neg_02_not_five_lt_three"},
+    {"id":"M3-03","class":"sets","lean_declaration":"m3_03_union_subset","target":"A ⊆ C → B ⊆ C → A ∪ B ⊆ C","negative_check":"m3_neg_03_not_succ_eq_self"},
+    {"id":"M3-04","class":"logic","lean_declaration":"m3_04_exists_add_one","target":"∃ m : Nat, m = n + 1","negative_check":"m3_neg_01_not_two_eq_three"},
+    {"id":"M3-05","class":"order","lean_declaration":"m3_05_le_refl","target":"n ≤ n","negative_check":"m3_neg_02_not_five_lt_three"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "m3-replay-report.v1",
+  "benchmark_id": "m3-lean-formalization-05",
+  "manifest_sha256": "AD9AB044DE14D6D21EEA9F68E58E5F1B443198703CC1E462DE04084F41BE0185",
+  "registry_sha256": "C261FAB84FEA94F3BCA8CAB852CBCAD56841EA53CA81D98DFC815AB3EB96CC54",
+  "benchmark_source_sha256": "F68008C26DF41C8540C506218EA91BF4645DCB8ACF20AF6C6224DA34297A232C",
+  "negative_source_sha256": "EEACC84DD7764FC82B9707C7BC5CDFF3F697B33BE85308DA8A4226BB497F32B9",
+  "m2_readiness_sha256": "F309704B1AA014A490B8433EBA84637D7B504BC27D56ABD625462EB8C11A4831",
+  "profile_scope": "local_machine_specific",
+  "environment_profile": "config\\local\\m0_environment.json",
+  "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
+  "replay_entry_point": "scripts/replay_m3.ps1",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "acceptance_status": "pass",
+  "replay_status": "pass"
+}

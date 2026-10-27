@@ -28,6 +28,9 @@
   "oracle": {
     "contract": "scripts/check_m3_contract.ps1",
     "replay": "scripts/replay_m3.ps1",
+    "replay_report": "reports/m3_replay_report.json",
+    "positive": "lake build M3",
+    "negative": "M3/Negative.lean",
     "evidence": "reports/m3_acceptance_report.json",
     "readiness": "reports/m3_readiness_report.json"
   },
