@@ -24,6 +24,7 @@
     "negative_tests":"scripts/test_m4_negative.ps1",
     "evidence":"reports/m4_suite_report.json",
     "replay_report":"reports/m4_replay_report.json",
+    "evidence_binding":"scripts/check_m4_evidence.ps1",
     "readiness":"reports/m4_readiness_report.json"
   },
   "replay_policy": {"locked_toolchain":true,"phase_readiness_required":true,"temporary_fixture_negative_tests":true,"no_unreviewed_external_mutation":true}

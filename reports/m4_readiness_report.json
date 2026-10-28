@@ -1,6 +1,7 @@
 {
   "schema": "m4-readiness-report.v1",
   "phase": "M4",
+  "evidence_binding": "reports/m4_evidence_binding_report.json",
   "blocking_items": [],
   "next_phase_allowed": true,
   "status": "ready"
