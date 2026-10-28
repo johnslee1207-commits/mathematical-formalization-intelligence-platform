@@ -1,0 +1,13 @@
+{
+  "schema": "m5-provenance-manifest.v1",
+  "handoff_id": "formalization-handoff-05",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "profile": "config/local/m0_environment.json",
+  "phases": [
+    {"phase":"M0","report":"reports/m0_replay_report.json","replay":"scripts/replay_m0.ps1"},
+    {"phase":"M1","report":"reports/m1_replay_report.json","replay":"scripts/replay_m1.ps1"},
+    {"phase":"M2","report":"reports/m2_replay_report.json","replay":"scripts/replay_m2.ps1"},
+    {"phase":"M3","report":"reports/m3_replay_report.json","replay":"scripts/replay_m3.ps1"},
+    {"phase":"M4","report":"reports/m4_replay_report.json","replay":"scripts/replay_m4.ps1"}
+  ]
+}

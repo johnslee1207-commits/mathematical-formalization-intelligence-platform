@@ -1,0 +1,8 @@
+{
+  "schema": "m5-readiness-report.v1",
+  "phase": "M5",
+  "evidence": "reports/m5_provenance_report.json",
+  "blocking_items": [],
+  "next_phase_allowed": true,
+  "status": "ready"
+}

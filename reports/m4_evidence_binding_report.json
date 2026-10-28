@@ -1,7 +1,7 @@
 {
   "schema": "m4-evidence-binding-report.v1",
-  "suite_report_sha256": "8CF7EBCE20E712599DAFEFE1263113B07120E6C1587C219D8A66D503E66EA8E4",
-  "registry_sha256": "4ACCFD81CB0DF46CFA5F6400F2BD9DBB517F5DB2CD77CDDC8E48827C67336620",
+  "suite_report_sha256": "EDB4BF1604C8C1DA6A3A918E63E0132EF5AB7402918975CAC8EEFFC959C76E73",
+  "registry_sha256": "E3C61B0A4114632F55E0C36BD197CF1C602437194AD5D82E70A80D2D571E2116",
   "workflow_entry_point": ".github/workflows/lean_action_ci.yml",
   "environment_profile": "config\\local\\m0_environment.json",
   "status": "pass"

@@ -1,0 +1,21 @@
+{
+  "schema": "m5-task-contract.v1",
+  "phase": "M5",
+  "title": "Evidence provenance bundle and reproducible handoff",
+  "status": "started",
+  "objective": "Package the completed M0-M4 evidence lineage into a reproducible handoff artifact without moving policy into executable code.",
+  "boundary": {
+    "in_scope": ["E:/Projects/mathematical-formalization-intelligence-platform", "M0-M4 provenance, handoff metadata and deterministic verification"],
+    "out_of_scope": ["AetherOS", "Cognisphere", "cognisphere-db", "production deployment", "unreviewed external mutation"]
+  },
+  "deliverables": [
+    {"id":"M5-T1","name":"Provenance manifest","acceptance":"Declare phase reports, replay tools, profiles and toolchain as data."},
+    {"id":"M5-T2","name":"Independent provenance verifier","acceptance":"Reject missing files, stale hashes and non-ready phases without running theorem synthesis."},
+    {"id":"M5-T3","name":"Handoff negative corpus","acceptance":"Reject temporary provenance and report mutations."},
+    {"id":"M5-T4","name":"Reproducible handoff report","acceptance":"Emit a hash-bound report suitable for a later phase or reviewer."},
+    {"id":"M5-T5","name":"M5 readiness gate","acceptance":"Produce a machine-checkable handoff readiness report."
+    }
+  ],
+  "oracle": {"contract":"scripts/check_m5_contract.ps1","replay":"scripts/replay_m5.ps1","provenance":"benchmarks/m5_provenance_manifest.json","selector":"scripts/verify_m5_provenance.ps1","negative_tests":"scripts/test_m5_negative.ps1","evidence":"reports/m5_provenance_report.json","readiness":"reports/m5_readiness_report.json"},
+  "replay_policy": {"locked_toolchain":true,"m4_readiness_required":true,"temporary_fixture_negative_tests":true,"no_unreviewed_external_mutation":true}
+}
