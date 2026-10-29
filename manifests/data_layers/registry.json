@@ -2,7 +2,7 @@
   "schema": "m0-data-layer-registry.v1",
   "layers": {
     "platform_common": ["scripts/", "AGENTS.md"],
-    "domain_common": ["benchmarks/", "M0/", "M1/", "M2/", "M3/", "M4/", "M5/"],
+    "domain_common": ["benchmarks/", "M0/", "M1/", "M2/", "M3/", "M4/", "M5/", "M6/"],
     "runtime_generated": ["reports/", ".lake/"],
     "local_machine_specific": ["config/local/", "config/ci/", "lean-toolchain", "lake-manifest.json", "lakefile.toml"]
   },

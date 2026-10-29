@@ -18,5 +18,6 @@
 - Use `scripts/replay_m4.ps1` to validate the selected phase suite and emit M4 readiness evidence.
 - Use `scripts/check_m5_contract.ps1` to validate the M5 provenance handoff contract.
 - Use `scripts/replay_m5.ps1` to validate the M0–M4 provenance handoff and M5 readiness.
+- Use `scripts/check_m6_contract.ps1` to validate the M6 external-review package contract.
 - Use `scripts/replay_m0.ps1` to verify that the locked benchmark and data-layer registry replay successfully.
 - Keep the Lean toolchain and Mathlib revisions locked by `lean-toolchain` and `lake-manifest.json`.

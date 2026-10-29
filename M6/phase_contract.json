@@ -1,0 +1,21 @@
+{
+  "schema": "m6-task-contract.v1",
+  "phase": "M6",
+  "title": "External review and reproducible handoff package",
+  "status": "started",
+  "objective": "Prepare a review-oriented package that exposes provenance, readiness and replay entry points without mutating external repositories.",
+  "boundary": {
+    "in_scope": ["E:/Projects/mathematical-formalization-intelligence-platform", "M0-M5 review package and handoff validation"],
+    "out_of_scope": ["AetherOS", "Cognisphere", "cognisphere-db", "external publication", "unreviewed external mutation"]
+  },
+  "deliverables": [
+    {"id":"M6-T1","name":"Review package manifest","acceptance":"Declare review artifacts, checks and replay entry points as data."},
+    {"id":"M6-T2","name":"Independent review verifier","acceptance":"Validate all required readiness and provenance reports without theorem synthesis."},
+    {"id":"M6-T3","name":"Review package negative tests","acceptance":"Reject missing or mutated review artifacts in temporary fixtures."},
+    {"id":"M6-T4","name":"Handoff summary","acceptance":"Emit a hash-bound review package report."},
+    {"id":"M6-T5","name":"M6 readiness gate","acceptance":"Produce a machine-checkable review readiness report."
+    }
+  ],
+  "oracle": {"contract":"scripts/check_m6_contract.ps1","replay":"scripts/replay_m6.ps1","manifest":"benchmarks/m6_review_manifest.json","evidence":"reports/m6_review_report.json","readiness":"reports/m6_readiness_report.json"},
+  "replay_policy": {"locked_toolchain":true,"m5_readiness_required":true,"temporary_fixture_negative_tests":true,"no_unreviewed_external_mutation":true}
+}
