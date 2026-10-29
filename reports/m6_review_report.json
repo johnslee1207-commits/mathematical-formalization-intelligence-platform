@@ -1,0 +1,56 @@
+{
+  "schema": "m6-review-report.v1",
+  "package_id": "formalization-review-package-06",
+  "manifest_sha256": "D173B685DA1D2EFC78BB6DEC223A2A2CB3C597245DB90D020ECAFCE4EE2C7573",
+  "artifacts": [
+    {
+      "id": "M0",
+      "readiness": "reports/m0_acceptance_report.json",
+      "replay": "reports/m0_replay_report.json",
+      "entry": "scripts/replay_m0.ps1",
+      "readiness_sha256": "7150959EB7AF141F779FC15E7601F3D9810CD8C3B7BF3F9E0D14D9345619F886",
+      "replay_sha256": "9C00321667F11DD8D7931F881433B14B6B25F5EC1D030318B4FADBAF8F422022"
+    },
+    {
+      "id": "M1",
+      "readiness": "reports/m1_acceptance_report.json",
+      "replay": "reports/m1_replay_report.json",
+      "entry": "scripts/replay_m1.ps1",
+      "readiness_sha256": "49AB811A6A20658E7D47F22FA1DFCE214064307B99420D9ED7CCA60451C55849",
+      "replay_sha256": "D958DDC224D76C4C0B2C3C60AC99B84BE8FD0DF01EC3828A677507FD6851FC72"
+    },
+    {
+      "id": "M2",
+      "readiness": "reports/m2_readiness_report.json",
+      "replay": "reports/m2_replay_report.json",
+      "entry": "scripts/replay_m2.ps1",
+      "readiness_sha256": "F309704B1AA014A490B8433EBA84637D7B504BC27D56ABD625462EB8C11A4831",
+      "replay_sha256": "258E8A28785598EC2936F5D83BA290D764C84CA308796F4968815C22746003E4"
+    },
+    {
+      "id": "M3",
+      "readiness": "reports/m3_readiness_report.json",
+      "replay": "reports/m3_replay_report.json",
+      "entry": "scripts/replay_m3.ps1",
+      "readiness_sha256": "A8FB6D01155298C32464F8F9D57A2064CE725CD1E24EF5DEA888DB0EFE427178",
+      "replay_sha256": "A4E07B4B5159803724608B4FE85D1416A28D7C0B8664131CDB3905688242D5FD"
+    },
+    {
+      "id": "M4",
+      "readiness": "reports/m4_readiness_report.json",
+      "replay": "reports/m4_replay_report.json",
+      "entry": "scripts/replay_m4.ps1",
+      "readiness_sha256": "D6BC18D0D598B97C173EEACA78BEE78909B4166FD9586CE3DFC422D6F49FE244",
+      "replay_sha256": "150D9A67D7DA1EDF2DF012A96BCB76E90AC742CA26835EF5165B8D9C87F74757"
+    },
+    {
+      "id": "M5",
+      "readiness": "reports/m5_readiness_report.json",
+      "replay": "reports/m5_replay_report.json",
+      "entry": "scripts/replay_m5.ps1",
+      "readiness_sha256": "87309766CF96F4096E62F3624D288D419DB7CAB0C227B44B1F0E6B9241A8E765",
+      "replay_sha256": "CD566CC8335D7C77585B26D76E4FBB219DF5C62EF6FAB2C6634E3ED2417461B5"
+    }
+  ],
+  "status": "pass"
+}

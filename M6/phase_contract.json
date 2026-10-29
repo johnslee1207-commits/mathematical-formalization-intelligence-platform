@@ -16,6 +16,6 @@
     {"id":"M6-T5","name":"M6 readiness gate","acceptance":"Produce a machine-checkable review readiness report."
     }
   ],
-  "oracle": {"contract":"scripts/check_m6_contract.ps1","replay":"scripts/replay_m6.ps1","manifest":"benchmarks/m6_review_manifest.json","evidence":"reports/m6_review_report.json","readiness":"reports/m6_readiness_report.json"},
+  "oracle": {"contract":"scripts/check_m6_contract.ps1","replay":"scripts/replay_m6.ps1","manifest":"benchmarks/m6_review_manifest.json","selector":"scripts/verify_m6_review.ps1","negative_tests":"scripts/test_m6_negative.ps1","evidence":"reports/m6_review_report.json","readiness":"reports/m6_readiness_report.json"},
   "replay_policy": {"locked_toolchain":true,"m5_readiness_required":true,"temporary_fixture_negative_tests":true,"no_unreviewed_external_mutation":true}
 }

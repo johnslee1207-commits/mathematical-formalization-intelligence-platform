@@ -1,0 +1,12 @@
+{
+  "schema": "m6-review-manifest.v1",
+  "package_id": "formalization-review-package-06",
+  "artifacts": [
+    {"id":"M0","readiness":"reports/m0_acceptance_report.json","replay":"reports/m0_replay_report.json","entry":"scripts/replay_m0.ps1"},
+    {"id":"M1","readiness":"reports/m1_acceptance_report.json","replay":"reports/m1_replay_report.json","entry":"scripts/replay_m1.ps1"},
+    {"id":"M2","readiness":"reports/m2_readiness_report.json","replay":"reports/m2_replay_report.json","entry":"scripts/replay_m2.ps1"},
+    {"id":"M3","readiness":"reports/m3_readiness_report.json","replay":"reports/m3_replay_report.json","entry":"scripts/replay_m3.ps1"},
+    {"id":"M4","readiness":"reports/m4_readiness_report.json","replay":"reports/m4_replay_report.json","entry":"scripts/replay_m4.ps1"},
+    {"id":"M5","readiness":"reports/m5_readiness_report.json","replay":"reports/m5_replay_report.json","entry":"scripts/replay_m5.ps1"}
+  ]
+}

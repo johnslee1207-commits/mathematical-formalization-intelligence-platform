@@ -1,0 +1,8 @@
+{
+  "schema": "m6-readiness-report.v1",
+  "phase": "M6",
+  "evidence": "reports/m6_review_report.json",
+  "blocking_items": [],
+  "next_phase_allowed": true,
+  "status": "ready"
+}
