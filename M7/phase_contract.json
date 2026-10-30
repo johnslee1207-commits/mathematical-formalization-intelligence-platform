@@ -12,6 +12,6 @@
     {"id":"M7-T4","name":"Evidence binding","acceptance":"Bind M7 evidence to M6 readiness and the locked Lean toolchain."},
     {"id":"M7-T5","name":"Readiness gate","acceptance":"Produce a machine-checkable M7 readiness report."}
   ],
-  "oracle":{"contract":"scripts/check_m7_contract.ps1","replay":"scripts/replay_m7.ps1","positive":"lake build M7","negative_tests":"scripts/test_m7_negative.ps1","evidence":"reports/m7_acceptance_report.json","replay_report":"reports/m7_replay_report.json","readiness":"reports/m7_readiness_report.json"},
+  "oracle":{"contract":"scripts/check_m7_contract.ps1","replay":"scripts/replay_m7.ps1","positive":"lake build M7","negative_tests":"scripts/test_m7_negative.ps1","evidence":"reports/m7_acceptance_report.json","evidence_binding":"scripts/check_m7_evidence.ps1","replay_report":"reports/m7_replay_report.json","readiness":"reports/m7_readiness_report.json"},
   "replay_policy":{"locked_toolchain":true,"m6_readiness_required":true,"temporary_fixture_negative_tests":true,"no_unreviewed_external_mutation":true}
 }

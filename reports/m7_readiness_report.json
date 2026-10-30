@@ -2,6 +2,8 @@
   "schema": "m7-readiness-report.v1",
   "phase": "M7",
   "blocking_items": [],
+  "evidence_binding": "reports/m7_evidence_binding_report.json",
+  "evidence_binding_sha256": "5E2BFE21CF1ECC7E6998AE02DE9E088FB9054CAFFB544A2F80EE43B88D2F443E",
   "next_phase_allowed": true,
   "status": "ready"
 }
