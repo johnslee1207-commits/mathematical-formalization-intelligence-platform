@@ -1,7 +1,7 @@
 {
   "schema": "m4-replay-report.v1",
-  "suite_report_sha256": "0B4DF314183B237EF8BC45A0CA32E618F42F9813EA08A2595C682290F8480B40",
-  "registry_sha256": "540BC3364CF305B538ACAD109950ED09414E0D07FFAA6F9AE776D22064935894",
+  "suite_report_sha256": "654375F626C457B8F885D194D25DBC57B8255EC84262A9E32957A7744C1B07CB",
+  "registry_sha256": "813A244F9A6DDCF28CBFE526DDF01EEBDC59C1589E46835D7C11DC53C1DC006A",
   "toolchain": "leanprover/lean4:v4.35.0",
   "profile_scope": "local_machine_specific",
   "environment_profile": "config\\local\\m0_environment.json",

@@ -1,0 +1,12 @@
+{
+  "benchmark_id":"m7-number-theory-05",
+  "version":"0.1.0",
+  "oracle":"lake build M7",
+  "cases":[
+    {"id":"M7-01","class":"primality","lean_declaration":"m7_01_prime_two","target":"Nat.Prime 2","negative_check":"m7_neg_01_not_prime_one"},
+    {"id":"M7-02","class":"divisibility","lean_declaration":"m7_02_dvd_add_self","target":"n ∣ n + n","negative_check":"m7_neg_02_not_three_dvd_four"},
+    {"id":"M7-03","class":"modular_arithmetic","lean_declaration":"m7_03_mod_self","target":"n % n = 0","negative_check":"m7_neg_03_not_gcd_two_three_two"},
+    {"id":"M7-04","class":"gcd","lean_declaration":"m7_04_gcd_self","target":"Nat.gcd n n = n","negative_check":"m7_neg_02_not_three_dvd_four"},
+    {"id":"M7-05","class":"divisibility","lean_declaration":"m7_05_dvd_trans","target":"a ∣ b → b ∣ c → a ∣ c","negative_check":"m7_neg_01_not_prime_one"}
+  ]
+}

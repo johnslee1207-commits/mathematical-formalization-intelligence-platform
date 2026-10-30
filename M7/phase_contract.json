@@ -1,0 +1,17 @@
+{
+  "schema": "m7-task-contract.v1",
+  "phase": "M7",
+  "title": "Number theory benchmark expansion",
+  "status": "started",
+  "objective": "Add a real-domain number theory benchmark slice while preserving independent verification and replay evidence.",
+  "boundary": {"in_scope":["E:/Projects/mathematical-formalization-intelligence-platform","M7 number theory proofs, negative corpus and CI replay"],"out_of_scope":["AetherOS","Cognisphere","cognisphere-db","production theorem synthesis","unreviewed external mutation"]},
+  "deliverables":[
+    {"id":"M7-T1","name":"Number theory benchmark","acceptance":"Add five versioned number theory cases with positive and negative mappings."},
+    {"id":"M7-T2","name":"Independent verifier","acceptance":"Validate manifest-to-source mappings and registered data paths without theorem policy."},
+    {"id":"M7-T3","name":"Negative replay","acceptance":"Reject altered number theory manifests and proof sources in temporary fixtures."},
+    {"id":"M7-T4","name":"Evidence binding","acceptance":"Bind M7 evidence to M6 readiness and the locked Lean toolchain."},
+    {"id":"M7-T5","name":"Readiness gate","acceptance":"Produce a machine-checkable M7 readiness report."}
+  ],
+  "oracle":{"contract":"scripts/check_m7_contract.ps1","replay":"scripts/replay_m7.ps1","positive":"lake build M7","negative_tests":"scripts/test_m7_negative.ps1","evidence":"reports/m7_acceptance_report.json","replay_report":"reports/m7_replay_report.json","readiness":"reports/m7_readiness_report.json"},
+  "replay_policy":{"locked_toolchain":true,"m6_readiness_required":true,"temporary_fixture_negative_tests":true,"no_unreviewed_external_mutation":true}
+}
